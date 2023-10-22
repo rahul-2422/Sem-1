@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  QUESTION_4                                                           02/28/2021 18:58:34 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question 4.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question 4.asm SET(SMALL) DEBUG PRINT(.\Listings\Question 4.lst) OBJECT
+                      (.\Objects\Question 4.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+                       2             
+0000 7441              3     mov a, #65                      ; giving 65h value to a register.
+0002 755000            4     mov 50h, #00h           ; clears 50h memory location.
+                       5     
+0005 7950              6     mov r1, #50h
+0007 7A00              7     mov r2, #00h
+                       8     
+0009                   9     sum:
+0009 75F00A           10     mov b, #10
+000C 84               11     div ab                          ; divides a by 10
+000D FB               12     mov r3, a
+000E E5F0             13     mov a, b                        ; remainder is moved to a.
+                      14     
+0010 27               15     add a, @r1
+0011 F7               16     mov @r1, a                      ; sum is stored in 50h memory location.
+0012 EB               17     mov a, r3
+0013 B400F3           18     cjne a, #00h, sum       ; repeated untill number becomes 0.
+                      19     end
+A51 MACRO ASSEMBLER  QUESTION_4                                                           02/28/2021 18:58:34 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+SUM. . . . . . . .  C ADDR   0009H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

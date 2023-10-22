@@ -1,0 +1,39 @@
+A51 MACRO ASSEMBLER  QUESTION_5                                                           02/28/2021 19:04:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question 5.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question 5.asm SET(SMALL) DEBUG PRINT(.\Listings\Question 5.lst) OBJECT
+                      (.\Objects\Question 5.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+                       2             
+0000 759059            3     mov p1, #89                     ; giving temperature input of 89f.
+                       4     
+0003 E590              5     mov a, p1
+0005 9420              6     subb a, #32
+0007 75F005            7     mov b, #05
+000A A4                8     mul ab
+000B 75F009            9     mov b, #09
+000E 84               10     div ab                          ; temperature is converted to celcius.
+000F F541             11     mov 41h, a                      ; temperature is stored in 41h location.
+0011 85F040           12     mov 40h, b
+                      13     end
+A51 MACRO ASSEMBLER  QUESTION_5                                                           02/28/2021 19:04:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

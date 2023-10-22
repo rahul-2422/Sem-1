@@ -1,0 +1,70 @@
+A51 MACRO ASSEMBLER  QUESTION_3                                                           02/28/2021 18:47:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question 3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question 3.asm SET(SMALL) DEBUG PRINT(.\Listings\Question 3.lst) OBJECT
+                      (.\Objects\Question 3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0221                   1     org 0221h
+0221 01060409          2             db 1,6,4,9,5,1,3,8,2,4          ; array 1.
+0225 05010308                
+0229 0204                    
+022B 05080604          3             db 5,8,6,4,8,3,4,7,1,9          ; array 2.
+022F 08030407                
+0233 0109                    
+                       4     
+0000                   5     org 0000h
+                       6             
+0000 7950              7     mov r1, #50h                                    ; loading offset 50f into r1.
+0002 900221            8     mov dptr, #0221h                                ; loading array address.
+                       9     
+0005                  10     moving:
+0005 E4               11     clr a
+0006 93               12     movc a, @a + dptr
+0007 F7               13     mov @r1, a
+0008 09               14     inc r1
+0009 A3               15     inc dptr
+000A B964F8           16     cjne r1, #64h, moving                   ; moving all values.
+                      17     
+000D 7850             18     mov r0, #50h
+000F 795A             19     mov r1, #5ah
+                      20     
+0011                  21     compare:
+0011 E6               22     mov a, @r0
+0012 87F0             23     mov b, @r1
+0014 08               24     inc r0
+0015 09               25     inc r1
+0016 B5F008           26     cjne a, b, next                                 ; comparing each element.
+0019 D3               27     setb c
+001A B85AF4           28     cjne r0, #5ah, compare
+001D 7400             29     mov a, #00h
+001F 6005             30     jz last
+                      31     
+0021 C3               32     next: clr c                                             ; based comparision set or clear ca
+                             rry flag.
+0022 E8               33     mov a, r0
+0023 B85AEB           34     cjne r0, #5ah, compare
+0026                  35     last:
+                      36     end
+A51 MACRO ASSEMBLER  QUESTION_3                                                           02/28/2021 18:47:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+COMPARE. . . . . .  C ADDR   0011H   A   
+LAST . . . . . . .  C ADDR   0026H   A   
+MOVING . . . . . .  C ADDR   0005H   A   
+NEXT . . . . . . .  C ADDR   0021H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

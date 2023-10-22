@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  QUESTION3                                                            02/16/2021 15:36:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question3.asm SET(SMALL) DEBUG PRINT(.\Listings\Question3.lst) OBJECT(.
+                      \Objects\Question3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+                       2     
+0000 7840              3     mov r0, #40h
+0002 7941              4     mov r1, #41h
+0004 E6                5     mov a, @r0
+0005 87F0              6     mov b, @r1
+0007 A4                7     mul ab
+0008 26                8     add a, @r0
+0009 5002              9     jnc next1
+000B 05F0             10     inc b
+000D                  11     next1:
+000D 27               12     add a, @r1
+000E 5002             13     jnc next2
+0010 05F0             14     inc b
+0012                  15     next2:
+0012 2405             16     add a, #05h
+0014 5002             17     jnc stop
+0016 05F0             18     inc b
+0018                  19     stop:
+                      20     end
+A51 MACRO ASSEMBLER  QUESTION3                                                            02/16/2021 15:36:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+NEXT1. . . . . . .  C ADDR   000DH   A   
+NEXT2. . . . . . .  C ADDR   0012H   A   
+STOP . . . . . . .  C ADDR   0018H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

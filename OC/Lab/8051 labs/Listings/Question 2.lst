@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  QUESTION_2                                                           02/28/2021 18:01:12 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question 2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question 2.asm SET(SMALL) DEBUG PRINT(.\Listings\Question 2.lst) OBJECT
+                      (.\Objects\Question 2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+                       2             
+0000 7940              3     mov r1, #40h
+0002 740A              4     mov a, #0ah                             ; Imediate addressing mode.
+0004 75F012            5     mov b, #12h                             ; moving 12h to b register.
+0007 FB                6     mov r3, a
+0008 4B                7     orl a, r3
+0009 F4                8     cpl a                                   ; calculating A'
+                       9     
+000A F7               10     mov @r1, a                              ; storing A' in memory at 40h location.
+000B E5F0             11     mov a, b
+000D AAF0             12     mov r2, b
+000F 4A               13     orl a, r2
+0010 F4               14     cpl a                                   ; calculating B'
+                      15     
+0011 09               16     inc r1
+0012 F7               17     mov @r1, a                              ; storing B' in memory at 41h location.
+0013 4540             18     orl a, 40h
+0015 F4               19     cpl a                                   ; apllying (a' + b')' = a.b
+0016 F550             20     mov 50h, a                              ; storing result in 50h location.
+                      21     end
+A51 MACRO ASSEMBLER  QUESTION_2                                                           02/28/2021 18:01:12 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

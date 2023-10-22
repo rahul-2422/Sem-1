@@ -1,0 +1,59 @@
+A51 MACRO ASSEMBLER  LAB                                                                  02/09/2021 15:55:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Lab.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Lab.asm SET(SMALL) DEBUG PRINT(.\Listings\Lab.lst) OBJECT(.\Objects\Lab
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+                       2     
+                       3     ;Addition.
+0000 753001            4     mov 30h, #01h            ;direct
+0003 7405              5     mov a, #05h              ;immediate
+0005 2530              6     add a, 30h               ;direct
+0007 F502              7     mov 2, a                 ;register
+                       8     
+                       9     ;Subtraction.
+0009 7845             10     mov r0, #45h             ;immediate
+000B 7616             11     mov @r0, #16h            ;indirect
+000D 7412             12     mov a, #12h              ;immediate
+000F 96               13     subb a, @r0              ;indirect
+0010 F503             14     mov 3, a                  
+                      15     
+                      16     ;Multiplication.
+0012 7843             17     mov r0, #43h
+0014 7604             18     mov @r0, #04h
+0016 E6               19     mov a, @r0
+0017 75F003           20     mov b, #03h
+001A A4               21     mul ab
+001B ACF0             22     mov r4, b
+001D FD               23     mov r5, a
+                      24     
+                      25     ;Division.
+001E 755008           26     mov 50h, #08h
+0021 7950             27     mov r1,#50h
+0023 E7               28     mov a, @r1
+0024 75F002           29     mov b, #02h
+0027 84               30     div ab
+0028 F506             31     mov 6, a
+002A 85F007           32     mov 7, b
+                      33     
+                      34     end
+A51 MACRO ASSEMBLER  LAB                                                                  02/09/2021 15:55:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

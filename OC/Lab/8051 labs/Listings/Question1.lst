@@ -1,0 +1,49 @@
+A51 MACRO ASSEMBLER  QUESTION1                                                            02/28/2021 18:01:10 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question1.asm SET(SMALL) DEBUG PRINT(.\Listings\Question1.lst) OBJECT(.
+                      \Objects\Question1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+  0002                 2     constant equ 02h                                ; constant value 02h
+                       3             
+0000 7940              4     mov r1, #40h
+0002 7712              5     mov @r1, #12h
+0004 09                6     inc r1
+0005 7704              7     mov @r1, #04h
+0007 E540              8     mov a, 40h                                              ; direct addressing mode
+0009 8541F0            9     mov b, 41h                                              ; value at 41h is moved to b.
+000C 95F0             10     subb a, b
+000E FB               11     mov r3, a                                               ; vlaue of  X - Y  is moved to r3.
+000F E540             12     mov a, 40h
+0011 8541F0           13     mov b, 41h
+0014 25F0             14     add a,b
+0016 8BF0             15     mov b, r3
+0018 84               16     div ab
+0019 2402             17     add a, #constant
+001B F550             18     mov 50h, a                                              ; moving result into 50h memory loc
+                             ation.
+                      19     
+001D 80FE             20     here: sjmp here
+                      21     end
+A51 MACRO ASSEMBLER  QUESTION1                                                            02/28/2021 18:01:10 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CONSTANT . . . . .  N NUMB   0002H   A   
+HERE . . . . . . .  C ADDR   001DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
